@@ -4,13 +4,13 @@
 }
 
 .chatroom-container{
-    display: block;
+    display: none;
     /* width: 400px; */
     margin: auto;
 }
 
 .form-username{
-    display: none;
+    /* display: none; */
 }
 
 .chatroom-header{

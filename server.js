@@ -15,8 +15,10 @@ const io = new Server(server);
 
 // connection established mean the frontend is accessing the backend It is a prebuilt events
 io.on('connection', (socket)=>{
-    console.log(socket.id);
-})
+    socket.on('echo123', (data)=>{
+        io.emit('echo123', data);
+    });
+});
 
 // using middle to send the public folder to browser. 
 // It will run before any other code
@@ -26,6 +28,6 @@ app.use(express.static('public'));
 // Listening to the port
 server.listen(PORT, () => {
     console.log(`server is running on http://localhost:${PORT}`)
-})
+});
 
 
